@@ -1,0 +1,517 @@
+@include treelist-ui(
+        $ui: 'navigation',
+        $padding: 0 8px,
+          // Black-ish background color
+        $background-color: $panel-navigation-background-color,
+        $toolstrip-background-color: $panel-navigation-background-color,
+        $tool-float-indicator-color: $panel-header-background-color,
+        $tool-float-indicator-width: 5px,
+        $tool-indicator-selected-color: $panel-header-background-color,
+        $tool-indicator-selected-width: 5px,
+        $tool-selected-background-color: mix(white, $panel-navigation-background-color, 5%),
+          //$tool-selected-color: #fff,
+          //$tool-selected-background-color: $panel-header-background-color,
+
+          // Darker background for expanded subtrees #2c3845
+        $item-expanded-background-color: darken($panel-navigation-background-color, 2%),
+          // Taller line height
+        $item-line-height: $panel-navigation-item-line-height,
+        $row-over-background-color: mix(white, $panel-navigation-background-color, 3%),
+        $row-selected-background-color: mix(white, $panel-navigation-background-color, 5%),
+          // Off-white text
+        $item-icon-color: $panel-navigation-item-text-color,
+        $item-expander-color: $lightest-color,
+        $item-text-color: $panel-navigation-item-text-color,
+          // Brighter when hovered
+        $item-icon-over-color: $lightest-color,
+        $item-expander-over-color: $lightest-color,
+        $item-text-over-color: mix(white, $panel-navigation-item-text-color, 50%),
+        $item-text-font-size: 14px,
+          // Various sizes for the pieces:
+        $item-icon-font-size: 18px,
+        $item-icon-width: 36px,
+        $item-expander-font-size: 16px,
+        $item-expander-width: 20px,
+          // Style the "row indicator" (the vertical stripe on the left edge):
+        $row-indicator-width: 5px,
+        $row-indicator-selected-color: $panel-header-background-color,
+        $row-indicator-selected-over-color: lighten($panel-header-background-color, 7%),
+        $row-indicator-over-color: transparent
+);
+@include extjs-tab-panel-ui(
+        $ui: 'navigation',
+          //$ui-tab-border-radius : 10,
+        $ui-tab-glyph-color: $panel-header-background-color,
+        $ui-tab-color: $panel-header-background-color,
+        $ui-tab-line-height: 26px,
+        $ui-tab-icon-spacing: 8px,
+        $ui-bar-background-color: #f6f6f6 //  mix(white, $panel-header-background-color, 65%) //lighten($panel-header-background-color, 7%) // $panel-header-background-color//mix(white, $panel-navigation-background-color, 10%)
+);
+@include extjs-panel-ui(
+        $ui: 'navigation'
+);
+@include extjs-tab-panel-ui(
+        $ui: 'light',
+          //$ui-tab-border-radius : 10,
+        $ui-tab-glyph-color: lighten($panel-header-background-color, 7%),
+        $ui-tab-color: lighten($panel-header-background-color, 7%),
+        $ui-bar-background-color: #ECECEC //  mix(white, $panel-header-background-color, 65%) //lighten($panel-header-background-color, 7%) // $panel-header-background-color//mix(white, $panel-navigation-background-color, 10%)
+);
+
+//--------------------------------------------------------
+// Create classes for full-size responsive items
+
+.big-100 {
+  @include responsivecolumn-item(100%);
+}
+
+.big-60 {
+  @include responsivecolumn-item(60%);
+}
+
+.big-50 {
+  @include responsivecolumn-item(50%);
+}
+
+.big-40 {
+  @include responsivecolumn-item(40%);
+}
+
+.big-33 {
+  @include responsivecolumn-item(33.33%);
+}
+
+.big-20 {
+  @include responsivecolumn-item(20%);
+}
+
+//--------------------------------------------------------
+// And classes for small-size responsive items
+
+.x-responsivecolumn-small {
+  > .small-100 {
+    @include responsivecolumn-item(100%);
+  }
+
+  > .small-50 {
+    @include responsivecolumn-item(50%);
+  }
+
+}
+
+//--------------------------------------------------------
+
+.app-logo {
+  background-color: $base-color;
+  height: 50px;
+
+  font-size: 16px;
+  color: $lightest-color;
+  margin-left: 17px;
+  cursor: pointer;
+
+  .main-logo {
+    line-height: 50px;
+    i {
+      margin-left: 15px;
+      margin-right: 20px;
+      line-height: 50px;
+      font-size: 22px;
+      top: 2px;
+      position: relative;
+    }
+    i:before {
+      content: "\f259" !important;
+    }
+  }
+}
+
+.app-logo:hover {
+  .main-logo {
+    i:before {
+      content: "\f0c9" !important;
+    }
+  }
+}
+
+.app-user-nav {
+  background-color: $base-color;
+  // height: 45px;
+  min-height: 64px;
+  font-size: 12px;
+  color: $lightest-color;
+  margin-left: 17px;
+  cursor: pointer;
+
+  .user-nav {
+    // line-height: 45px;
+    i {
+      margin-left: 13px;
+      margin-right: 18px;
+      line-height: 45px;
+      font-size: 25px;
+      top: 8px;
+      position: relative;
+    }
+    .user-content {
+      display: inline;
+      font-size: 13px;
+      .user-content-sub {
+        font-size: 11px;
+        color: darkgray;
+        margin-left: 60px;
+        top: -12px;
+        position: relative;
+      }
+    }
+  }
+}
+
+.app-user-logout {
+  background-color: $base-color;
+  // height: 45px;
+  min-height: 45px;
+  font-size: 12px;
+  color: $lightest-color;
+  margin-left: 17px;
+  cursor: pointer;
+
+  .user-logout {
+    // line-height: 45px;
+    i {
+      margin-left: 13px;
+      margin-right: 18px;
+      // line-height: 45px;
+      font-size: 22px;
+      top: 1px;
+      position: relative;
+    }
+    .user-content {
+      display: inline;
+      font-size: 12px;
+      .user-content-sub {
+        font-size: 11px;
+        color: darkgray;
+        margin-left: 60px;
+        top: -12px;
+        position: relative;
+      }
+    }
+  }
+}
+
+.nav-collapsed {
+  .app-logo {
+    .main-logo {
+      .main-title {
+        display: none;
+      }
+    }
+  }
+  .app-user-nav {
+    .user-nav {
+      .user-content {
+        display: none;
+      }
+    }
+  }
+}
+
+.app-user-nav:hover {
+  .user-nav {
+    .user-content {
+      content: "Configuraciones" !important;
+    }
+    i:before {
+      content: "\f013" !important;
+    }
+  }
+}
+
+.extended_tools {
+  .x-tool-tool-el {
+    width: 20px;
+  }
+}
+
+/*
+.fa-hand-spock:before {
+    content: "\f259" !important;
+}
+.fa-bandcamp:before {
+    content: "\f2d5" !important;
+}
+ */
+.app-title {
+  font-size: 16px;
+  margin-left: 17px;
+}
+
+.app-dash-dash-headerbar {
+  padding: 0 30px 0 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  border: none;
+  .header-right-profile-image {
+    border-radius: 20px;
+  }
+}
+
+.top-english-button {
+  .x-btn-icon-el {
+    width: 21px;
+    height: 14px;
+  }
+}
+
+.collapsed {
+  .hot-icon, .new-icon {
+    &:after {
+      display: none;
+    }
+  }
+  .x-tree-elbow-img {
+    display: none;
+  }
+
+  .x-tree-node-text {
+    display: none;
+  }
+}
+
+.x-treelist-floater {
+  .x-treelist-container {
+    padding-left: 35px
+  }
+}
+
+.x-grid-cell {
+  position: relative;
+}
+
+.hot-icon, .new-icon {
+  &.hot-icon:after {
+    content: "HOT";
+    background: #e3495a;
+  }
+  &.new-icon:after {
+    content: "NEW";
+    background: $base-color;
+  }
+  &:after {
+    height: 18px;
+    width: 34px;
+    display: inline-block;
+    position: absolute;
+    top: 22px;
+    right: -180px;
+    text-align: center;
+    color: $lightest-color;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 18px;
+  }
+}
+
+.x-treelist-item-tool {
+  height: $panel-navigation-item-line-height;
+  &.hot-icon:after, &.new-icon:after {
+    background: $panel-header-background-color;
+    content: '';
+  }
+}
+
+//.toolbar-btn-shadow{
+//    @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+//    .x-btn-over{
+//        background-color: $button-toolbar-hover-background-color;
+//    }
+//}
+
+//Add border around html editor field
+.x-html-editor-input {
+  border: 1px solid #ccc;
+}
+
+//UI Styles for buttons
+@include extjs-button-small-ui(
+        $ui: 'soft-blue',
+        $background-color: $color-soft-blue,
+        $border-color: darken($color-soft-blue, 5%)
+);
+@include extjs-button-large-ui(
+        $ui: 'soft-blue',
+        $line-height: 34px,
+        $background-color: $color-soft-blue,
+        $border-color: darken($color-soft-blue, 5%)
+);
+@include extjs-button-toolbar-small-ui(
+        $ui: 'soft-blue',
+        $background-color: $color-soft-blue,
+        $border-color: darken($color-soft-blue, 5%)
+);
+
+@include extjs-button-small-ui(
+        $ui: 'facebook',
+        $background-color: $social-facebook-btn-background,
+        $border-color: darken($social-facebook-btn-background, 5%)
+);
+@include extjs-button-large-ui(
+        $ui: 'facebook',
+        $line-height: 34px,
+        $background-color: $social-facebook-btn-background,
+        $border-color: darken($social-facebook-btn-background, 5%)
+);
+
+@include extjs-button-small-ui(
+        $ui: 'soft-cyan',
+        $background-color: $color-soft-cyan,
+        $border-color: darken($color-soft-cyan, 5%)
+);
+@include extjs-button-toolbar-small-ui(
+        $ui: 'soft-cyan',
+        $background-color: $color-soft-cyan,
+        $border-color: darken($color-soft-cyan, 5%)
+);
+
+@include extjs-button-small-ui(
+        $ui: 'soft-green',
+        $background-color: $color-soft-green,
+        $border-color: darken($color-soft-green, 5%)
+);
+@include extjs-button-large-ui(
+        $ui: 'soft-green',
+        $line-height: 34px,
+        $background-color: $color-soft-green,
+        $border-color: darken($color-soft-green, 5%)
+);
+@include extjs-button-toolbar-small-ui(
+        $ui: 'soft-green',
+        $background-color: $color-soft-green,
+        $border-color: darken($color-soft-green, 5%)
+);
+
+@include extjs-button-small-ui(
+        $ui: 'soft-red',
+        $background-color: $color-soft-red,
+        $border-color: darken($color-soft-red, 5%)
+);
+@include extjs-button-toolbar-small-ui(
+        $ui: 'soft-red',
+        $background-color: $color-soft-red,
+        $border-color: darken($color-soft-red, 5%)
+);
+
+@include extjs-button-small-ui(
+        $ui: 'soft-purple',
+        $background-color: $color-soft-purple,
+        $border-color: darken($color-soft-purple, 5%)
+);
+@include extjs-button-toolbar-small-ui(
+        $ui: 'soft-purple',
+        $background-color: $color-soft-purple,
+        $border-color: darken($color-soft-purple, 5%)
+);
+
+@include extjs-button-small-ui(
+        $ui: 'gray',
+        $background-color: $color-gray,
+        $border-color: darken($color-gray, 5%)
+);
+@include extjs-button-large-ui(
+        $ui: 'gray',
+        $line-height: 34px,
+        $background-color: $color-gray,
+        $border-color: darken($color-gray, 5%)
+);
+@include extjs-button-toolbar-small-ui(
+        $ui: 'gray',
+        $background-color: $color-gray,
+        $border-color: darken($color-gray, 5%)
+);
+
+@include extjs-button-small-ui(
+        $ui: 'green',
+        $background-color: $color-green,
+        $border-color: darken($color-green, 5%)
+);
+@include extjs-button-toolbar-small-ui(
+        $ui: 'green',
+        $background-color: $color-green,
+        $border-color: darken($color-green, 5%)
+);
+
+@include extjs-button-small-ui(
+        $ui: 'blue',
+        $background-color: $color-blue,
+        $border-color: darken($color-blue, 5%)
+);
+@include extjs-button-toolbar-small-ui(
+        $ui: 'blue',
+        $background-color: $color-blue,
+        $border-color: darken($color-blue, 5%)
+);
+
+@include extjs-button-small-ui(
+        $ui: 'header',
+        $color: #999,
+        $glyph-color: #919191,
+        $background-color: transparent,
+        $border-width: 0
+);
+.shadow {
+  @include box-shadow(0, 1px, 2px, 0, rgba(0, 0, 0, 0.2));
+}
+
+.shadow-right {
+  @include box-shadow(2px, 0, 2px, 0, rgba(0, 0, 0, 0.2));
+}
+
+.nav-tree-badge:after {
+  position: absolute;
+  height: 18px;
+  width: 3.3em;
+  display: inline-block;
+  text-align: center;
+  top: 50%;
+  margin-top: -9px;
+  right: 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 18px;
+}
+
+.nav-tree-badge-hot:after {
+  content: "HOT";
+  background-color: #e3495a;
+}
+
+.nav-tree-badge-new:after {
+  content: "NEW";
+  background-color: $color-soft-blue;
+}
+
+.pop-out {
+  @include box-shadow(2px, 2px, 8px, 2px, #ccc);
+}
+
+.circular {
+  border-radius: 50%;
+}
+.isError {
+  color: $color-soft-red;
+}
+.isValid {
+  color: $color-soft-green;
+}
+.isWarning {
+  color: $color-soft-orange;
+}
+.isInfo {
+  color: $color-soft-blue;
+}
+.isDisabled {
+  color: $color-gray;
+}

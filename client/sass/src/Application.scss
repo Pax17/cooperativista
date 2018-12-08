@@ -1,0 +1,105 @@
+
+.preload-images {
+  background: url(get-resource-path('images/loading.png')) no-repeat -9999px -9999px,
+  url(get-resource-path('images/error-page-background.jpg')) no-repeat -9999px -9999px,
+  url(get-resource-path('images/lock-screen-background.jpg')) no-repeat -9999px -9999px;
+}
+
+// Loading screen while loading the application (resources and initialization)
+@-webkit-keyframes rotate-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes rotate-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+
+body.launching {
+  background-color: $panel-navigation-background-color;
+
+  &::before {
+    /*   -webkit-animation: rotate-animation 1s linear infinite;
+       animation: rotate-animation 1s linear infinite;
+       -webkit-transform-origin: 50% 50%;
+       transform-origin: 50% 50%;
+   */
+
+    @include animation(rotate-animation 1s linear infinite);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image: url(get-resource-path('images/loading.png'));
+    background-position: center;
+    content: '';
+    position: absolute;
+    margin-top: -15px;
+    margin-left: -15px;
+    top: 50%;
+    left: 50%;
+    width: 41px;
+    height: 41px
+  }
+}
+
+.nice-form {
+
+  .x-form-trigger-wrap-default.x-form-trigger-wrap-invalid {
+    border-bottom-color: #cf4c35;
+  }
+  .x-form-invalid-field-default,
+  .x-form-text-default,
+  .x-form-text,
+  .x-form-trigger-default {
+    background: none;
+  }
+  .x-form-trigger-wrap-default {
+
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $form-border-color;
+  }
+  .x-form-invalid {
+    .password-trigger:before, .auth-email-trigger:before, .auth-password-trigger:before, .auth-envelope-trigger:before {
+      color: #cf4c35 !important;
+    }
+  }
+}
+
+.cell-widget-no-pad {
+  .x-grid-widgetcolumn-cell-inner {
+    padding: 0 !important;
+  }
+}
+
+.min-trigger {
+  .x-form-arrow-trigger-default {
+    width: 16px;
+  }
+  .x-form-text-default {
+    padding: 5px 3px 4px 10px;
+  }
+}

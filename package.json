@@ -1,0 +1,80 @@
+{
+  "name": "cooperativista",
+  "version": "0.8.9",
+  "productName": "Cooperativista",
+  "description": "Administración de cooperadoras",
+  "main": "./main.js",
+  "scripts": {
+    "postinstallDeprecated": "install-app-deps",
+    "postinstall": "electron-builder install-app-deps",
+    "start": "electron . built",
+    "plain": "electron . plain",
+    "packageDeprecated": "electron-packager ./ cooperativista --ignore=client$ --ignore=\\.ps1  --out ./dist --overwrite",
+    "test": "echo \"Error: no tests specified\" && exit 1",
+    "release": "build"
+  },
+  "build": {
+    "directories": {
+      "buildResources": "assets"
+    },
+    "linux": {
+      "icon": "assets/icons/png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icons/mac/icon.icns"
+    },
+    "win": {
+      "icon": "assets/icons/win/icon.ico"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "window": {
+        "width": 370,
+        "height": 280
+      },
+      "internetEnabled": true
+    },
+    "files": [
+      "main.js",
+      "pdfkitExtended.js",
+      "initialSettings.json",
+      "pdf.js",
+      "db/**/*",
+      "server/**/*",
+      "menu/**/*",
+      "translations/**/*",
+      "client_built/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "appId": "com.pax17.cooperativista"
+  },
+  "author": "Martín Panizzo",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^5.0.1",
+    "dataobject-parser": "^1.2.1",
+    "electron-pdf-window": "^1.0.12",
+    "electron-routes": "^1.3.0",
+    "electron-settings": "^3.2.0",
+    "pdfkit": "^0.8.3",
+    "platform-folders": "^0.2.7"
+  },
+  "devDependencies": {
+    "electron": "^3.0.9",
+    "electron-builder": "^20.28.4"
+  }
+}
