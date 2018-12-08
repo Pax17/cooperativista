@@ -27,7 +27,7 @@ $ cd ..
 $ yarn install
 $ yarn run plain
 ```
-Después de clonar el repositorio, debe correr ``yarn run plain`` ya que el comando ``yarn start`` predeterminado carga la versión de producción de la aplicación Ext JS, la cual aún no se habrá compilado. La compilación de desarrollo también recrea los archivos de arranque.
+Después de clonar el repositorio, debe correr ``yarn run plain`` ya que el comando ``yarn start`` predeterminado carga la versión de producción de la aplicación Ext JS, la cual aún no se habrá compilado. Al compilar en modo desarrollo también se recrean los archivos de arranque.
 
 ## Compilando la app Ext JS
 
@@ -48,7 +48,7 @@ $ yarn start
 
 ## Empaquetando la aplicación Electron con Ext JS
 
-El script ``package`` ejecuta el comando para compilar y minimizar la aplicación de Ext JS y luego ejecuta el comando [Electron Builder] (https://www.electron.build) para agrupar todo junto con Electron para su distribución (en la carpeta `` dist``).
+El script ``package`` ejecuta el comando para compilar y minimizar la aplicación de Ext JS y luego ejecuta el comando [Electron Builder](https://www.electron.build) para agrupar todo junto con Electron para su distribución (en la carpeta `` dist``).
 
 ### Mac/Linux
 ```
@@ -63,5 +63,5 @@ $ ./package
 
 ## Author
 Martín Panizzo
-- [github.com](https://github.com/Martin17
+- [github.com](https://github.com/Martin17)
 - [@martin_17](https://twitter.com/Martin_17)
