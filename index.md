@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cooperativista
-tagline: 
+tagline: Cooperadoras escolares
 ---
 
 ## Administración contable de cooperadoras escolares
