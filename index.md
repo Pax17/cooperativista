@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 description: Administración contable de cooperadoras escolares
 tagline: 
 ---
