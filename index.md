@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: page
 description: Administración contable de cooperadoras escolares
 tagline: 
 ---
-
 
 ## Cooperativista: Administración contable de cooperadoras escolares
 
