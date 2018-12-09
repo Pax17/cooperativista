@@ -1,6 +1,5 @@
 ---
 layout: page
-description: Administración contable de cooperadoras escolares
 tagline: 
 ---
 
