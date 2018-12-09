@@ -6,3 +6,4 @@ description: Aplicativo para el manejo contable de Cooperadoras escolares. La id
 ---
 
 
+## Cooperativista: Administración contable de cooperadoras escolares
