@@ -115,12 +115,13 @@ const template = [
             {
                 label: i18n.__('Cooperativista Help'),
                 click() {
-                    let win = require('electron').BrowserWindow.getFocusedWindow();
+                  /*  let win = require('electron').BrowserWindow.getFocusedWindow();
                     //<debug>
                     console.debug(win);
                     //</debug>
                     if(win)
-                        win.webContents.send('redirect-request', {token: 'faq'})
+                        win.webContents.send('redirect-request', {token: 'faq'})*/
+                    require('electron').shell.openExternal('https://pax17.github.io/cooperativista/help')
                 }
             },
             {
