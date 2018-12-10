@@ -4,6 +4,7 @@ title: Cooperativista
 subtitle:  Administración contable de cooperadoras escolares
 tagline: Cooperadoras escolares
 gh-repo: Pax17/cooperativista
+gh-badge: [fork]
 ---
 
 ### Introducción
