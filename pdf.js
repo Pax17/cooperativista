@@ -295,7 +295,7 @@ module.exports = {
         let last = dbHelper.doRead('helper_attr', ['value +1 receipt_number'], { 'taxonomy': 'receipt_number' }, null)
         console.log(last)
         if (!last) {
-            dbHelper.doInsert(event, { 'taxonomy': 'receipt_number', 'value': 1 }, 'helper_attr');
+            dbHelper.doInsert(null, { 'taxonomy': 'receipt_number', 'value': 1 }, 'helper_attr');
             last = {
                 receipt_number: 1
             }
