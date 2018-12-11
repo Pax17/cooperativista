@@ -17,6 +17,7 @@ module.exports = () => {
     const rest = new Router('sqlite');
     // const sRest = new MiniRouter();
     let where = '';
+    const reader = require('feed-reader');
     const apis = [
         {
             api: 'entities',
@@ -510,8 +511,31 @@ FROM
         res.json({success: true})
     })
 
-    web.get('config', (req, res) => {
-        res.json(config);
+    web.get('pax17-rss', (req, res) => {
+        let feedUrl = "https://pax17.github.io/cooperativista/feed.xml";
+        reader.parse(feedUrl).then((feed) => {
+            console.log(feed);
+            res.json({
+                data: feed,
+                success: true
+            })
+                .catch((err) => {
+                    res.json({
+                        error: err,
+                        success: false
+                    });
+                    console.error(err);
+                });
+
+        }).catch((err) => {
+            res.json({
+                error: err,
+                success: false
+            });
+            console.error(err);
+        }).finally(() => {
+            console.log('Everything done');
+        });
     });
 
 }

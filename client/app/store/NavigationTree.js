@@ -13,7 +13,7 @@ Ext.define('Cooperativista.store.NavigationTree', {
             {
                 text: 'Dashboard',
                 iconCls: 'x-fas fa-desktop',
-                rowCls: 'nav-tree-badge nav-tree-badge-new',
+              //  rowCls: 'nav-tree-badge nav-tree-badge-new',
                 viewType: 'admindashboard',
                 routeId: 'dashboard', // routeId defaults to viewType
                 leaf: true

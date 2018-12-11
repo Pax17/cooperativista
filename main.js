@@ -1,4 +1,4 @@
-const { ipcMain, app, BrowserWindow, dialog } = require('electron');
+const {ipcMain, app, BrowserWindow, dialog} = require('electron');
 const fs = require('fs');
 const path = require('path');
 const config = require(path.join(__dirname, 'package.json'));
@@ -8,6 +8,7 @@ const extDir = (process.argv[process.argv.length - 1] === 'plain') ? 'client' : 
 const bcrypt = require('bcryptjs');
 const sqlite = require('better-sqlite3');
 const i18n = new (require('./translations/i18n'))
+const {autoUpdater} = require("electron-updater")
 
 require('./server/server')();
 require('./server/api')();
@@ -33,7 +34,11 @@ if (!gotTheLock) {
  */
 // Create myWindow, load the rest of the app, etc...
 app.on('ready', function () {
+    autoUpdater.checkForUpdatesAndNotify().then(status => {
+        console.log(status);
+    });
 });
+
 function createWindow(savedSettings) {
     let specs = {
         width: 1280, height: 720,
@@ -76,6 +81,7 @@ function isEmpty(obj) {
     }
     return JSON.stringify(obj) === JSON.stringify({});
 }
+
 function objectFlatten(ob) {
     let toReturn = {};
 
@@ -195,10 +201,14 @@ function initMainApp() {
     console.log('PRAGMA****************>>>>>>>>>>>>>>>>>>>>', insert);
     db.close();
 }
+
 function extend(obj, src) {
-    Object.keys(src).forEach(function (key) { obj[key] = src[key]; });
+    Object.keys(src).forEach(function (key) {
+        obj[key] = src[key];
+    });
     return obj;
 }
+
 function updateEntityData(entity_id) {
     let sql = 'SELECT id, name, name_2, name_3, attribute_1, attribute_2, attribute_3, attribute_4, attribute_5 FROM entities WHERE id = $entity_id',
         params = {

@@ -16,7 +16,19 @@ Ext.define('Cooperativista.view.dashboard.DashboardController', {
         let route = btn.role || tool.role;
         this.redirectTo(route);
     },
-    startMigration: function () {
+    init: function () {
+        fetch('mrf://pax17-rss')
+            .then(resp => resp.json())
+            .catch(err => {
+                console.log(err, '<---------------------rsserr'); // { hello: 'world' }
 
+            })
+            .then(o => {
+                console.log(o, '<---------------------rss'); // { hello: 'world' }
+            })
+            .catch(err => {
+            console.log(err, '<---------------------rsserr'); // { hello: 'world' }
+
+        });
     }
 });
