@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cooperativista 0.9 disponile
+title: Cooperativista 0.9 disponible
 published: true
 subtitle: Primer versión púnbica de cooperativista
 date: '2018-12-11'
