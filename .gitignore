@@ -14,3 +14,4 @@ assets/_lock-screen-background.jpg
 *.lock
 *.log
 .vscode
+workspace.json
