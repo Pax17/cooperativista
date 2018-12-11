@@ -1,0 +1,102 @@
+{
+  "settingsVersion": 2.1,
+  "dbVersion": 2.4,
+  "appInitialized": false,
+  "adminRoles": [
+    1
+  ],
+  "defaultEntity": 1,
+  "lastUser": null,
+  "currentUser": {},
+  "currentEntityData": {
+    "name": "Cooperadora",
+    "defaultFeeAmount": 150
+  },
+  "loginstarted": null,
+  "backaupDB": {
+    "path": null,
+    "date": null
+  },
+  "receipt": {
+    "options": {
+      "size": "A5",
+      "margin": 30,
+      "layout": "landscape"
+    },
+    "settings": {
+      "receipt_date": {
+        "enabled": true,
+        "align": "left",
+        "size": 10,
+        "x": 30,
+        "y": 30
+      },
+      "receipt_number": {
+        "enabled": true,
+        "align": "right",
+        "size": 10,
+        "legend": "Recibo Nº ",
+        "x": 390,
+        "y": 30
+      },
+      "title": {
+        "enabled": true,
+        "align": "center",
+        "size": 16,
+        "size_2": 13,
+        "x": 40,
+        "y": 30
+      },
+      "address": {
+        "enabled": true,
+        "align": "center",
+        "size": 11,
+        "x": 40,
+        "y": 70
+      },
+      "lines": {
+        "enabled": true,
+        "showHeaders": true,
+        "lineHeader": true,
+        "lineRows": true,
+        "x": 40,
+        "y": 170,
+        "size": 11,
+        "total": {
+          "enabled": true
+        },
+        "payment_date": {
+          "enabled": true,
+          "align": "left",
+          "legend": "Fecha",
+          "size": 11,
+          "x": 40
+        },
+        "partner": {
+          "enabled": true,
+          "align": "left",
+          "size": 11,
+          "legend": "Alumno",
+          "x": 120
+        },
+        "course": {
+          "enabled": true
+        },
+        "concept": {
+          "enabled": true,
+          "legend": "Concepto",
+          "align": "left",
+          "size": 11,
+          "x": 270
+        },
+        "amount": {
+          "enabled": true,
+          "align": "right",
+          "legend": "Monto",
+          "size": 11,
+          "x": 460
+        }
+      }
+    }
+  }
+}
