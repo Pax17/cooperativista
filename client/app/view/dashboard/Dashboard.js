@@ -19,41 +19,17 @@ Ext.define('Cooperativista.view.dashboard.Dashboard', {
     },
 
     items: [
-       /* {
-            xtype: 'network',
-
-            // 60% width when viewport is big enough,
-            // 100% when viewport is small
-            userCls: 'big-60 small-100'
-        },*/
-       /* {
-            xtype: 'hddusage',
-            userCls: 'big-20 small-50'
-        },
-        {
-            xtype: 'earnings',
-            userCls: 'big-20 small-50'
-        },
-        {
-            xtype: 'sales',
-            userCls: 'big-20 small-50'
-        },
-        {
-            xtype: 'topmovies',
-            userCls: 'big-20 small-50'
-        },
-        {
-            xtype: 'weather',
-            cls: 'weather-panel shadow',
-            userCls: 'big-40 small-100'
-        },
-        {
-            xtype: 'todo',
-            userCls: 'big-60 small-100'
-        },*/
         {
             xtype: 'info',
-            userCls: 'big-60 small-100'
+            userCls: 'big-50 small-100'
+        },
+        {
+            xtype: 'news',
+            userCls: 'big-50 small-100'
+        },
+        {
+            xtype: 'initnav',
+            userCls: 'big-50 small-100'
         }
     ]
 });
