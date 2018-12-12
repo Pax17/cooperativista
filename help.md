@@ -1,8 +1,9 @@
 ---
 layout: page
-title: Ayuda de Cooperativista
+title: Ayuda
 tagline: Cooperadoras escolares
 published: true
+subtitle: Tutoriales y ayida de Cooperativista
 ---
 ## [Tutorial](tutorial)
 
