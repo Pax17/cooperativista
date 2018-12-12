@@ -37,7 +37,7 @@ gh-repo: Pax17/cooperativista
     </a>
 
     <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
+      Publicado {{ post.date | date: "%B %-d, %Y" }}
     </p>
 
     <div class="post-entry-container">
@@ -78,12 +78,12 @@ gh-repo: Pax17/cooperativista
 <ul class="pager main-pager">
   {% if paginator.previous_page %}
   <li class="previous">
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Publicaciones Nuevas</a>
   </li>
   {% endif %}
   {% if paginator.next_page %}
   <li class="next">
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Publicaciones Antiguas &rarr;</a>
   </li>
   {% endif %}
 </ul>
