@@ -168,7 +168,7 @@ defaults:
   -
     scope:
       path: "" # all files
-    values: 
+    values:
       layout: "page"
       show-avatar: true
 
