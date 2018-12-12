@@ -11,4 +11,4 @@ Se encuentra disponible la primer versión de Cooperativista para su descarga en
 
 ~~En breve publicaremos una breve guía de uso.~~
 
-Guí de uso [aquí](tutorial).
+Guía de uso [aquí](../tutorial).
