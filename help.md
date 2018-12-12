@@ -37,6 +37,7 @@ Para acceder a la configuración, paso recomendado antes de ingresar pagos o gas
 Allí se pueden modificar los datos de la entidad y período:
 
 ![02.png]({{site.baseurl}}/img/screenshots/05.png)
+
 Conceptos aplicados a pagos y gastos:
 
 ![02.png]({{site.baseurl}}/img/screenshots/06.png)
