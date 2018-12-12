@@ -23,6 +23,7 @@ description: Administración contable de cooperadoras escolares
 
 # List of links in the navigation bar
 navbar-links:
+  Ayuda: "help"
   Descargas: "https://github.com/Pax17/cooperativista/releases"
   #Resources:
   #  - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
