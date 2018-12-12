@@ -9,4 +9,6 @@ date: '2018-12-11'
 
 Se encuentra disponible la primer versión de Cooperativista para su descarga en macOS o Windows. En breve estará disponible la versión para Linux. Ingrese a la sección de [Descargas](https://github.com/Pax17/cooperativista/releases). 
 
-En breve publicaremos una breve guía de uso.
+~~En breve publicaremos una breve guía de uso.~~
+
+Guí de uso [aquí](tutorial).
