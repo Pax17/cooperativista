@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Ayuda
+title: Centro de Ayuda
 tagline: Cooperadoras escolares
 published: true
 subtitle: Tutoriales y ayuda de Cooperativista
