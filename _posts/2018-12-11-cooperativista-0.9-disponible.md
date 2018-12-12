@@ -2,7 +2,7 @@
 layout: post
 title: Cooperativista 0.9 disponible
 published: true
-subtitle: Primer versión púnbica de cooperativista
+subtitle: Primer versión pública de cooperativista
 date: '2018-12-11'
 ---
 ## Cooperativista 0.9 disponible
