@@ -1,6 +1,6 @@
 ---
 layout: page
-subtitle: Ayuda de Cooperativista
+title: Ayuda de Cooperativista
 tagline: Cooperadoras escolares
 published: true
 ---
