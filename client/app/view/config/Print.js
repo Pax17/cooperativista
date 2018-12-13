@@ -15,7 +15,8 @@ Ext.define('Cooperativista.view.config.Print', {
         align: 'stretch'
     },
     listeners: {
-        dirtychange: 'onPrintFormDirty'
+        dirtychange: 'onPrintFormDirty',
+        validitychange: 'onPrintFormDirty'
     },
     trackResetOnLoad: true,
     scrollable: 'y',

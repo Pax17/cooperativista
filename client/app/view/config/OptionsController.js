@@ -43,9 +43,10 @@ Ext.define('Cooperativista.view.config.OptionsController', {
         const {ipcRenderer} = require('electron');
         return ipcRenderer.sendSync('pdf-preview', result);
     },
-    onPrintFormDirty: function (form, dirty) {
-        console.log(form, dirty);
+    onPrintFormDirty: function (form, status) {
         let valid = form.isValid();
+        let dirty = form.isDirty();
+        console.log(valid, dirty);
         this.getViewModel().set('printSettings.valid', valid);
         this.getViewModel().set('printSettings.dirty', dirty);
         this.getViewModel().notify();
