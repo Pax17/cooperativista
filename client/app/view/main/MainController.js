@@ -57,6 +57,7 @@ Ext.define('Cooperativista.view.main.MainController', {
         //<debug>
         console.debug('MainController VM', viewModel);
         //</debug>
+        viewModel.set('appVersion', Ext.getVersion('cooperativista'));
     },
     updateAppSettings: function () {
         //<debug>
@@ -162,7 +163,7 @@ Ext.define('Cooperativista.view.main.MainController', {
             newView;
 
         //<debug>
-        console.log(hashTag, existingItem, lastView? lastView.isWindow: null);
+        console.log(hashTag, existingItem, lastView ? lastView.isWindow : null);
         //</debug>
         // Kill any previously routed window
         if (lastView && lastView.isWindow) {

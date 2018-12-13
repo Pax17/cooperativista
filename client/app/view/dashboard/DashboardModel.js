@@ -8,102 +8,28 @@ Ext.define('Cooperativista.view.dashboard.DashboardModel', {
         'Ext.data.field.String',
         'Ext.data.field.Boolean'
     ],
+    data: {
 
-    stores: {
-       /* hddusage: {
-            autoLoad: true,
-            model: 'Cooperativista.model.DataXY',
-            proxy: {
-                type: 'api',
-                url: '~api/qg/area'
+        nav: [
+            {
+                title: 'Configuraciones del entorno',
+                tip: 'Agregar conceptos de pagos y gastos, cambiar datos de la entidad y usuario...',
+                role: 'options',
+                icon: 'fas fa-plug'
+            },
+            {
+                title: 'Agregar alumno',
+                tip: 'Agregar alumnos y aportantes...',
+                role: 'relations',
+                icon: 'fas fa-user'
+            },
+            {
+                title: 'Generar Recibo',
+                tip: 'Ingresar pagos, imprimir recibos...',
+                role: 'receipt',
+                icon: 'fas fa-receipt'
             }
-
-        },
-        quarterlyGrowth: {
-            autoLoad: true,
-            model: 'Cooperativista.model.DataXY',
-            proxy: {
-                type: 'api',
-                url: '~api/qg/bar'
-            }
-        },
-        earnings: {
-            autoLoad: true,
-            model: 'Cooperativista.model.DataXY',
-            proxy: {
-                type: 'api',
-                url: '~api/qg/line'
-            }
-        },
-        servicePerformance: {
-            autoLoad: true,
-            model: 'Cooperativista.model.DataXY',
-            proxy: {
-                type: 'api',
-                url: '~api/qg/pie'
-            }            
-
-        },
-        topMovies: {
-            autoLoad: true,
-            model: 'Cooperativista.model.DataXY',
-            proxy: {
-                type: 'api',
-                url: '~api/dashboard/movies'
-            }
-        },
-        networkData: {
-            autoLoad: true,
-            model: 'Cooperativista.model.MultiDataXY',
-            proxy: {
-                type: 'api',
-                url: '~api/dashboard/full'
-            }
-        },
-        visitors: {
-            autoLoad: true,
-            model: 'Cooperativista.model.MultiDataXY',
-            proxy: {
-                type: 'api',
-                url: '~api/dashboard/visitor'
-            }
-        },
-        bounces: {
-            autoLoad: true,
-            model: 'Cooperativista.model.MultiDataXY',
-            proxy: {
-                type: 'api',
-                url: '~api/dashboard/counce'
-            }
-        },
-        subscriptions: {
-            autoLoad: true,
-            model: 'Cooperativista.model.Subscription',
-            proxy: {
-                type: 'api',
-                url: '~api/subscriptions'
-            }
-        },*/
-        todos: {
-            autoLoad: true,
-            fields: [
-                {
-                    type: 'int',
-                    name: 'id'
-                },
-                {
-                    type: 'string',
-                    name: 'task'
-                },
-                {
-                    type: 'boolean',
-                    name: 'done'
-                }
-            ],
-            proxy: {
-                type: 'api',
-                url: '~api/dashboard/tasks'
-            }            
-        }
-    }
+        ]
+    },
+    stores: {}
 });

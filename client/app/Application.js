@@ -2,7 +2,7 @@ Ext.define('Cooperativista.Application', {
     extend: 'Ext.app.Application',
 
     name: 'Cooperativista',
-    requires:[
+    requires: [
         'Ext.state.LocalStorageProvider', 'Ext.state.Manager'
     ],
 
@@ -14,15 +14,17 @@ Ext.define('Cooperativista.Application', {
     //mainView: 'Cooperativista.view.main.Main',
 
     launch: function () {       // Renderer Process
-        const { rendererPreload } = require('electron-routes');
+        const {rendererPreload} = require('electron-routes');
 
-        const { ipcRenderer } = require('electron');
+        const {ipcRenderer} = require('electron');
         ipcRenderer.sendSync('launch');
         rendererPreload();
         const path = require('path')
         const app = require('electron').remote.app
         const settings = require('electron').remote.require('electron-settings')
         let appSettings = settings.getAll()
+        console.log(app.getVersion())
+        Ext.setVersion('cooperativista', app.getVersion());
         if (!appSettings.appInitialized) {
             //<debug>
             console.log('App necesita inicializarse!');

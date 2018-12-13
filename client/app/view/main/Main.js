@@ -121,7 +121,9 @@ Ext.define('Cooperativista.view.main.Main', {
                                     xtype: 'component',
                                     reference: 'appLogo',
                                     cls: 'app-logo',
-                                    html: '<div class="main-logo"><i class="x-fas"></i> <span class="main-title">Cooperativista</span></div>',
+                                    bind:{
+                                        html: '<div data-qtip="Cooperativista v{appVersion}" class="main-logo"><i class="x-fas"></i> <span class="main-title">Cooperativista</span></div>'
+                                    },
                                     width: 250,
                                     listeners: {
                                         click: {
