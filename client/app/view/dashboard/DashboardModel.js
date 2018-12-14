@@ -26,7 +26,7 @@ Ext.define('Cooperativista.view.dashboard.DashboardModel', {
             {
                 title: 'Generar Recibo',
                 tip: 'Ingresar pagos, imprimir recibos...',
-                role: 'receipt',
+                role: 'receipts',
                 icon: 'fas fa-receipt'
             }
         ]
