@@ -133,6 +133,9 @@ module.exports = {
                 if (printSettings.lines.lineRows) {
                     tableOptions.lineRows = printSettings.lines.lineRows;
                 }
+                if (printSettings.lines.showHeaders) {
+                    tableOptions.showHeaders = printSettings.lines.showHeaders;
+                }
                 let column_order = {};
 
                 if (printSettings.lines.payment_date.enabled) {
@@ -153,6 +156,8 @@ module.exports = {
                 if (printSettings.lines.showHeaders) {
                     table.headers = [];
                     tableOptions.headerStyles = [];
+                } else {
+                    table.headers = Object.values(column_order);
                 }
                 for (let colIndex of Object.values(column_order)) {
                     if (printSettings.lines.showHeaders) {

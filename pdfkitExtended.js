@@ -66,18 +66,19 @@ class PDFDocumentWithTables extends PDFDocument {
         // Print all headers
         let headerLastX = startX;
 
-        table.headers.forEach((header, i) => {
-            let style = headerStyles[i] || {};
-            let colWidth = 'width' in style ? style.width - columnSpacing : columnWidth;
-            let colContainerWidth = 'width' in style ? headerLastX : startX + i * columnContainerWidth;
-            console.log('headerStyles ----------------- > > >', header, i, style, 'x', colContainerWidth)
-            this.text(header, colContainerWidth, startY, {
-                width: colWidth,
-                align: style.align || 'left'
-            });
+        if (options.showHeaders)
+            table.headers.forEach((header, i) => {
+                let style = headerStyles[i] || {};
+                let colWidth = 'width' in style ? style.width - columnSpacing : columnWidth;
+                let colContainerWidth = 'width' in style ? headerLastX : startX + i * columnContainerWidth;
+                console.log('headerStyles ----------------- > > >', header, i, style, 'x', colContainerWidth)
+                this.text(header, colContainerWidth, startY, {
+                    width: colWidth,
+                    align: style.align || 'left'
+                });
 
-            headerLastX += colWidth + columnSpacing;
-        });
+                headerLastX += colWidth + columnSpacing;
+            });
 
         // Refresh the y coordinate of the bottom of the headers row
         rowBottomY = Math.max(startY + computeRowHeight(table.headers), rowBottomY);

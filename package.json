@@ -1,14 +1,11 @@
 {
   "name": "cooperativista",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "productName": "Cooperativista",
   "description": "Administración de cooperadoras",
   "homepage": "https://pax17.github.io/cooperativista/",
   "main": "./main.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Pax17/cooperativista.git"
-  },
+  "repository": "github:Pax17/cooperativista",
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
     "start": "electron . built",
@@ -68,7 +65,8 @@
       {
         "provider": "github",
         "owner": "Pax17",
-        "repo": "cooperativista"
+        "repo": "cooperativista",
+        "releaseType": "prerelease"
       }
     ]
   },
