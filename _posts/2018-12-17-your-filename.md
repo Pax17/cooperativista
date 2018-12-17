@@ -1,7 +1,7 @@
 ---
 layout: post
 published: false
-title: ''
+title: Cooperativista v0.9.2
 ---
 ## Cooperativista v0.9.2 Disponible
 
@@ -9,4 +9,4 @@ title: ''
 - Cambios en el Dashboard de inicio.
 - Correcciones para autoUpdate.
 
-Descargar [aquí](https://github.com/Pax17/cooperativista/releases/tag/v0.9.2). 
+Descargar [aquí](https://github.com/Pax17/cooperativista/releases/tag/v0.9.2).
