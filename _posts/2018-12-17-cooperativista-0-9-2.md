@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Cooperativista 0.9.2
 ---
 ## Cooperativista v0.9.2 Disponible
