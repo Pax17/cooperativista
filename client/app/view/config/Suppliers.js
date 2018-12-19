@@ -1,6 +1,6 @@
 
-Ext.define('Cooperativista.view.config.Suppliers',{
-    extend: 'Ext.panel.Panel',
+Ext.define('Cooperativista.view.config.Suppliers', {
+    extend: 'Ext.tab.Panel',
     xtype: 'suppliers',
     requires: [
         'Cooperativista.view.config.SuppliersController',
@@ -11,12 +11,17 @@ Ext.define('Cooperativista.view.config.Suppliers',{
     viewModel: {
         type: 'config-suppliers'
     },
-    items:[
+    cls: 'shadow extended_tools',
+    ui: 'navigation',
+    items: [
         {
 
             xtype: 'gridpanel',
-         //   cls: 'user-grid',
+            //   cls: 'user-grid',
+            title: 'Proveedores',
+            ui: 'light',
             reference: 'suppliers-grid',
+            iconCls: 'fas fa-dolly',
             cls: 'cell-widget-no-pad',
             stateful: true,
             stateId: 'suppliers-abm-grid',
@@ -107,7 +112,7 @@ Ext.define('Cooperativista.view.config.Suppliers',{
                     cls: 'content-column',
                     dataIndex: 'attribute_5',
                     text: 'Inactivo',
-                    format:'d-m-Y'
+                    format: 'd-m-Y'
                 },
                 {
                     // This is our Widget column

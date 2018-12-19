@@ -28,14 +28,17 @@ Ext.define('Cooperativista.view.main.MainController', {
         const app = require('electron').remote.app
         console.debug(app.getPath('userData'), 'Desde Main!');
 
-        const {ipcRenderer} = require('electron');
+        const { ipcRenderer } = require('electron');
 
         ipcRenderer.on('redirect-request', (event, data) => {
             //<debug>
-            console.debug(event, data);
+            console.log(event, data);
             //</debug>
-            let existsLockingWindow = Ext.ComponentQuery.query('lockingwindow');
-            if ('token' in data && existsLockingWindow.length === 0) {
+            let existsLockingWindow = Ext.ComponentQuery.query('lockingwindow').length + Ext.ComponentQuery.query('lockingform').length;
+            //<debug>
+            console.log(event, data, existsLockingWindow);
+            //</debug>
+            if ('token' in data && existsLockingWindow === 0) {
                 this.redirectTo(data.token);
             }
         });
@@ -65,7 +68,7 @@ Ext.define('Cooperativista.view.main.MainController', {
         //</debug>
         const viewModel = this.getViewModel()
         if (viewModel) {
-            const {ipcRenderer} = require('electron');
+            const { ipcRenderer } = require('electron');
             let appSettings = ipcRenderer.sendSync('get-settings', 'all');
             let appVersion = ipcRenderer.sendSync('get-app-version', 'all');
             Ext.apply(appSettings, appVersion)
@@ -82,14 +85,14 @@ Ext.define('Cooperativista.view.main.MainController', {
      * Debe corresrse después de que esté disponible el ViewModel!
      */
     setPeriodData: function () {
-        const {ipcRenderer} = require('electron');
+        const { ipcRenderer } = require('electron');
         const viewModel = this.getViewModel();
         const oldAmount = viewModel.get('default_fee_amount');
 
         /**
          * Default DUE amount!
          */
-        const {data: {value: default_fee_amount}} = ipcRenderer.sendSync('get-helper-taxonomy', {
+        const { data: { value: default_fee_amount } } = ipcRenderer.sendSync('get-helper-taxonomy', {
             taxonomy: 'default_fee_amount',
             status: 1
         });
@@ -101,7 +104,7 @@ Ext.define('Cooperativista.view.main.MainController', {
         /**
          * Períod Name
          */
-        const {data: {value: period_name}} = ipcRenderer.sendSync('get-helper-taxonomy', {
+        const { data: { value: period_name } } = ipcRenderer.sendSync('get-helper-taxonomy', {
             taxonomy: 'period_name',
             status: 1
         });
@@ -112,7 +115,7 @@ Ext.define('Cooperativista.view.main.MainController', {
         /**
          * Períod Start
          */
-        const {data: {value: period_start}} = ipcRenderer.sendSync('get-helper-taxonomy', {
+        const { data: { value: period_start } } = ipcRenderer.sendSync('get-helper-taxonomy', {
             taxonomy: 'period_start',
             status: 1
         });
@@ -123,7 +126,7 @@ Ext.define('Cooperativista.view.main.MainController', {
         /**
          * Períod End
          */
-        const {data: {value: period_end}} = ipcRenderer.sendSync('get-helper-taxonomy', {
+        const { data: { value: period_end } } = ipcRenderer.sendSync('get-helper-taxonomy', {
             taxonomy: 'period_end',
             status: 1
         });
@@ -134,7 +137,7 @@ Ext.define('Cooperativista.view.main.MainController', {
         /**
          * default_monthly_fee_concept
          */
-        const {data: {value: default_monthly_fee_concept}} = ipcRenderer.sendSync('get-helper-taxonomy', {
+        const { data: { value: default_monthly_fee_concept } } = ipcRenderer.sendSync('get-helper-taxonomy', {
             taxonomy: 'default_monthly_fee_concept',
             status: 1
         });
@@ -250,7 +253,7 @@ Ext.define('Cooperativista.view.main.MainController', {
             navigationList.canMeasure = false;
 
             // Start this layout first since it does not require a layout
-            refs.appLogo.animate({dynamic: true, to: {width: new_width}});
+            refs.appLogo.animate({ dynamic: true, to: { width: new_width } });
 
             navTreePanel.setWidth(new_width);
             navTreePanel.canMeasure = false;
@@ -258,7 +261,7 @@ Ext.define('Cooperativista.view.main.MainController', {
             // as the root layout (it and its chidren). This will cause the adjusted size to
             // be flushed to the element and animate to that new size.
             navigationList.width = new_width;
-            wrapContainer.updateLayout({isRoot: true});
+            wrapContainer.updateLayout({ isRoot: true });
             navigationList.el.addCls('nav-tree-animating');
 
             // We need to switch to micro mode on the navlist *after* the animation (this
@@ -297,7 +300,7 @@ Ext.define('Cooperativista.view.main.MainController', {
 
         }
         //refs.appLogo.setWidth(new_width);
-        refs.appLogo.animate({dynamic: true, to: {width: new_width}});
+        refs.appLogo.animate({ dynamic: true, to: { width: new_width } });
 
 
         navTreePanel.setWidth(new_width);
@@ -335,7 +338,7 @@ Ext.define('Cooperativista.view.main.MainController', {
 
     onLoginRequest: function () {
 
-        const {ipcRenderer} = require('electron');
+        const { ipcRenderer } = require('electron');
         let logout = ipcRenderer.sendSync('request-logout');
         if (logout.success) {
             this.updateAppSettings();
