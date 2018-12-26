@@ -579,6 +579,46 @@ module.exports = {
          });*/
 
     },
+    generateExpensesReport: function(data){
+        //console.log(this);
+        console.log(data);
+        let options = settings.get('expenses.options') || {};
+        let printSettings = settings.get('expenses.settings') || {};
+        const currentEntityData = settings.get('currentEntityData');
+
+        if (!('size' in options)) {
+            options.size = 'A4';
+        }
+        if (!('layout' in options)) {
+            options.layout = 'portrait';
+        }
+        if (!('margin' in options)) {
+            options.margin = 60;
+        }
+        options.info = {
+            Title: `Reporte de Gastos ${settings.get('currentEntityData.name')}`,
+            Author: settings.get('currentEntityData.name'),
+            Subject: 'Impresión de recibos',
+            ModDate: new Date(Date.now()).toLocaleString()
+        }
+        options.autoFirstPage = false;
+        //  console.log(options);
+        // console.log(printSettings);
+        let doc = new pdf(options);
+        let report_date = new Date();
+        let formatted_report_date_arr = [];
+        formatted_report_date_arr.push((report_date.getDate()).toString().padStart(2, '0'))
+        formatted_report_date_arr.push((report_date.getMonth() + 1).toString().padStart(2, '0'))
+        formatted_report_date_arr.push(report_date.getFullYear());
+        
+        for (const expense in data.expenses) {
+
+        }
+
+
+
+
+    },
     monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
     dayNames: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
 

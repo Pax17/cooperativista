@@ -51,12 +51,12 @@ Ext.define('Cooperativista.view.config.Expenses', {
                     formBind: true,
                     iconCls: 'x-fas fa-check',
                     handler: 'addExpense'
-                },
+                }/*,
                 {
                     //formBind: true,
                     iconCls: 'x-fas fa-save',
                     handler: 'saveDialog'
-                }
+                }*/
             ],
             items: [
                 {
@@ -192,7 +192,7 @@ Ext.define('Cooperativista.view.config.Expenses', {
                             minValue: 0,
                             reference: 'amount',
                             allowBlank: false,
-                            emptyText: 'Ingrese el monto dl Gasto'
+                            emptyText: 'Ingrese el monto del gasto'
                         },
                         {
                             xtype: 'combo',

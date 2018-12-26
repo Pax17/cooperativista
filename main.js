@@ -598,6 +598,7 @@ ipcMain.on('get-login', (event, args) => {
 ipcMain.on('pdf-get', (event, args) => {
     console.log('pdf-get------------------------------>', args)
     if (args.type === 'receipts') pdf.generateReceipt(args.data);
+    if (args.type === 'expenses') pdf.generateExpensesReport(args.data);
     event.returnValue = {
         success: true
     }
