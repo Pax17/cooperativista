@@ -58,7 +58,8 @@ module.exports = {
     recreateDb: function () {
         console.log('Existe ??? -------------->', dbLocation, fs.existsSync(dbLocation));
         let db = new sqlite(dbLocation);
-        const migration = fs.readFileSync(path.join(__dirname, 'db', 'cooperativista.sql'), 'utf8');
+        console.log('Existe ??? -------------->', path.join(__dirname, 'cooperativista.sql'));
+        const migration = fs.readFileSync(path.join(__dirname, 'cooperativista.sql'), 'utf8');
         db.exec(migration);
         return db;
     },
@@ -89,6 +90,16 @@ module.exports = {
 
         const read = dbSrc.prepare(select);
         const data = read.all();
+        if (table === 'helper_attr') {
+            let date = new Date();
+            for (let datum of data) {
+                if (datum.taxonomy === 'period_name') datum.value = date.getFullYear();
+                if (datum.taxonomy === 'period_start') datum.value = `${date.getFullYear()}-01-01`;
+                if (datum.taxonomy === 'period_end') datum.value = `${date.getFullYear()}-12-31`;
+            }
+
+            console.log('INSERT TO helper_attr---------------> ', data);
+        }
         const push = dbDest.prepare(insert);
         const me = this;
         const doTheJob = dbDest.transaction((rows) => {
