@@ -1,7 +1,8 @@
 ---
 layout: post
-published: false
+published: true
 title: Cooperativista v0.9.3
+subtitle: Actualización importante!
 ---
 ## Cooperativista v0.9.3 - Actualización importante!
 
